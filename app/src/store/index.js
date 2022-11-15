@@ -6,6 +6,8 @@ export default createStore({
   state: {
     users: [],
     newEmail: '',
+    token: '',
+    isAuthenticated: false
   },
   // mutations altera o state dos dados
   mutations: {
@@ -17,6 +19,23 @@ export default createStore({
     },
     storeEmail(state, payload) {
       state.newEmail = payload
+    },
+    initializeStore(state) {
+      if (localStorage.getItem('token')) {
+        state.token = localStorage.getItem('token')
+        state.isAuthenticated = true
+      } else {
+        state.token = ''
+        state.isAuthenticated = false
+      }
+    },
+    setToken(state, token) {
+        state.token = token
+        state.isAuthenticated = true
+    },
+    removeToken(state) {
+        state.token = ''
+        state.isAuthenticated = false
     }
   },
   // digamos que ele é mais completo do que o mutations, indicado para operações assíncronas.
