@@ -3,7 +3,8 @@
     <router-link to="/">Cadastro de e-mail</router-link> |
     <router-link to="/email">E-mail</router-link> |
     <router-link to="/signup">Cadastro de usuário</router-link> |
-    <router-link to="/login">Login</router-link>
+    <router-link to="/login">Login</router-link> |
+    <router-link to="/profile">Perfil</router-link>
   </nav>
   <router-view/>
 </template>

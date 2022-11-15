@@ -5,13 +5,13 @@
       "email": "lorem@email.com"
     },
     {
-      "username": "regis@mailinator.com",
+      "username": "regis@email.com",
       "password": "Pa$$w0rd!",
       "id": 2
     }
   ],
   "login": {
-    "username": "funyhe@mailinator.com",
+    "username": "gyxur@mailinator.com",
     "password": "Pa$$w0rd!",
     "auth_token": "b704c9fc3655635646356ac2950269f352ea1139"
   }

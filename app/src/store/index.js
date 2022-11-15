@@ -7,7 +7,8 @@ export default createStore({
     users: [],
     newEmail: '',
     token: '',
-    isAuthenticated: false
+    isAuthenticated: false,
+    username: '',
   },
   // mutations altera o state dos dados
   mutations: {
@@ -36,6 +37,10 @@ export default createStore({
     removeToken(state) {
         state.token = ''
         state.isAuthenticated = false
+    },
+    setUser(state, username) {
+        // Não necessário, usado apenas para simulação por não ter um autenticador (backend) de verdade.
+        state.username = username
     }
   },
   // digamos que ele é mais completo do que o mutations, indicado para operações assíncronas.

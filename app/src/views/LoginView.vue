@@ -54,6 +54,12 @@ export default {
               // Set token
               this.$store.commit('setToken', token)
 
+              // Get username
+              const username = response.data.username
+
+              // Set username (test only)
+              this.$store.commit('setUser', username)
+
               // Define token authorizion
               axios.defaults.headers.common['Authorization'] = 'Token ' + token
 
@@ -64,7 +70,7 @@ export default {
               console.log(this.$store.state.isAuthenticated)
 
               // redirect
-              // this.$router.push('/profile')
+              this.$router.push('/profile')
             })
             .catch(error => {
               console.log(error)
