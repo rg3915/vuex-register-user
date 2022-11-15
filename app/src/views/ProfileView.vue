@@ -8,6 +8,7 @@
       <button
         v-if="$store.state.isAuthenticated"
         class="button is-danger"
+        @click="logout"
       >Logout</button>
 
       <button
@@ -25,6 +26,18 @@ import axios from 'axios'
 export default {
     name: 'ProfileView',
     methods: {
+      async logout() {
+      //   await axios.post('/api/v1/token/logout/')
+      //     .then(response => {
+      //       console.log('Você saiu do sistema.')
+      //     })
+      //     .catch(error => {
+      //       console.log(error)
+
+        axios.defaults.headers.common['Authorization'] = ''
+        localStorage.removeItem('token')
+        this.$store.commit('removeToken')
+      }
     }
 }
 </script>
